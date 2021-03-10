@@ -38,6 +38,13 @@ public class normalVehicle implements vehicle{
 
     @Override
     public void setEngineType(String engineType) {
+        while( !engineType.equalsIgnoreCase("oil") && !engineType.equalsIgnoreCase("gas") && !engineType.equalsIgnoreCase("diesel") ){
+            System.out.println("Invalid Engine Type :(");
+            System.out.println("Please insert a valid Engine Type (oil/gas/diesel):");
+            Scanner input = new Scanner(System.in);
+            engineType = input.nextLine();
+        }
+        
         this.engineType = engineType;
     }
 
@@ -83,17 +90,31 @@ public class normalVehicle implements vehicle{
     
     @Override
     public void insert(){
-        System.out.print("Insert Model Number: ");
         Scanner input = new Scanner(System.in);
+        
+        System.out.print("Insert Model Number: ");
         String mn = input.nextLine();
         setModelNumber(mn);
+        
+        System.out.print("Insert Engine Type (oil/gas/diesel): ");
+        String et = input.nextLine();
+        setEngineType(et);
+        
+        System.out.print("Insert Engine Power in HP (Horse Power): ");
+        float ep = input.nextFloat();
+        setEnginePower(ep);
+        
+        System.out.print("Insert Tire Size in mm (milimeter): ");
+        float ts = input.nextFloat();
+        setTireSize(ts);
     }
 
     @Override
     public void showProperty(){
-        System.out.println("Vehicle Type: " + vehicleType);
-        System.out.println("Model Number: " + modelNumber);
-        System.out.println("Engine Type: " + engineType);
-        System.out.println("");
+        System.out.println("\tVehicle Type: " + vehicleType);
+        System.out.println("\tModel Number: " + modelNumber);
+        System.out.println("\tEngine Type: " + engineType);
+        System.out.println("\tEngine Power: " + enginePower + " HP");
+        System.out.println("\tTire size: " + tireSize + " mm");
     }
 }

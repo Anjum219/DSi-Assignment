@@ -1,5 +1,7 @@
 package showroom.of.vehicle;
 
+import java.util.Scanner;
+
 public class sportsVehicle implements vehicle{
     private String vehicleType = "Sports";
     private String modelNumber;
@@ -81,11 +83,32 @@ public class sportsVehicle implements vehicle{
     
     @Override
     public void insert(){
+        Scanner input = new Scanner(System.in);
         
+        System.out.print("Insert Model Number: ");
+        String mn = input.nextLine();
+        setModelNumber(mn);
+        
+        System.out.print("Insert Engine Power in HP (Horse Power): ");
+        float ep = input.nextFloat();
+        setEnginePower(ep);
+        
+        System.out.print("Insert Tire Size in mm (milimeter): ");
+        float ts = input.nextFloat();
+        setTireSize(ts);
+        
+        System.out.print("Insert Turbo: ");
+        String t = input.next();
+        setTurbo(t);
     }
 
     @Override
     public void showProperty(){
-        
+        System.out.println("\tVehicle Type: " + vehicleType);
+        System.out.println("\tModel Number: " + modelNumber);
+        System.out.println("\tEngine Type: " + engineType);
+        System.out.println("\tEngine Power: " + enginePower + " HP");
+        System.out.println("\tTire size: " + tireSize + " mm");
+        System.out.println("\tTurbo: " + turbo);
     }
 }

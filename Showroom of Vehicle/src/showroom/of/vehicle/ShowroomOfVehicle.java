@@ -17,9 +17,13 @@ public class ShowroomOfVehicle {
         vs.showVehicles();
         vs.addVehicles("sports");
         vs.showVehicles();*/
-        vs.addVehicles("normal");
+        vs.addVehicles();
+        vs.showVehicles();
+        vs.addVehicles();
         vs.showVehicles();
         vs.removeVehicle("MAR23");
+        vs.showVehicles();
+        vs.addVehicles();
         vs.showVehicles();
     }
     
