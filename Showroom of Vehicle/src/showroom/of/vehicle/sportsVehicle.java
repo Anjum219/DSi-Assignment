@@ -1,9 +1,9 @@
 package showroom.of.vehicle;
 
-public class heavyVehicle implements vehicle{
-    private String vehicleType = "Heavy";
+public class sportsVehicle implements vehicle{
+    private String vehicleType = "Sports";
     private String modelNumber;
-    private String engineType = "diesel";
+    private String engineType = "oil";
     private float enginePower;
     private float tireSize;
     private String turbo;
@@ -16,7 +16,7 @@ public class heavyVehicle implements vehicle{
 
     @Override
     public void setVehicleType(String vehicleType) {
-        this.vehicleType = "Heavy";
+        this.vehicleType = "Sports";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class heavyVehicle implements vehicle{
 
     @Override
     public void setEngineType(String engineType) {
-        this.engineType = "diesel";
+        this.engineType = "oil";
     }
 
     @Override
@@ -66,7 +66,7 @@ public class heavyVehicle implements vehicle{
 
     @Override
     public void setTurbo(String turbo) {
-        this.turbo = "";
+        this.turbo = turbo;
     }
 
     @Override
@@ -76,13 +76,11 @@ public class heavyVehicle implements vehicle{
 
     @Override
     public void setWeight(float weight) {
-        this.weight = weight;
+        this.weight = 0;
     }
 
     @Override
     public void showProperty(){
-        System.out.println("vehicle type: " + vehicleType);
-        System.out.println("engine type: " + engineType);
-        System.out.println("");
+        
     }
 }
