@@ -1,5 +1,7 @@
 package showroom.of.vehicle;
 
+import java.util.Scanner;
+
 public class normalVehicle implements vehicle{
     private String vehicleType = "Normal";
     private String modelNumber;
@@ -78,9 +80,20 @@ public class normalVehicle implements vehicle{
     public void setWeight(float weight) {
         this.weight = 0;
     }
+    
+    @Override
+    public void insert(){
+        System.out.print("Insert Model Number: ");
+        Scanner input = new Scanner(System.in);
+        String mn = input.nextLine();
+        setModelNumber(mn);
+    }
 
     @Override
     public void showProperty(){
-        
+        System.out.println("Vehicle Type: " + vehicleType);
+        System.out.println("Model Number: " + modelNumber);
+        System.out.println("Engine Type: " + engineType);
+        System.out.println("");
     }
 }

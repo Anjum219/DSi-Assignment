@@ -78,6 +78,11 @@ public class sportsVehicle implements vehicle{
     public void setWeight(float weight) {
         this.weight = 0;
     }
+    
+    @Override
+    public void insert(){
+        
+    }
 
     @Override
     public void showProperty(){

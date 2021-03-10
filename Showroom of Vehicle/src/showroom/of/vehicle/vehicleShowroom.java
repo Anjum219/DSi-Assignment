@@ -16,6 +16,7 @@ public class vehicleShowroom {
     public void addVehicles(String vehicleType){
         if( vehicleType.equalsIgnoreCase("Normal") ){
             normalVehicle nv = new normalVehicle();
+            nv.insert();
             vehicles.add(nv);
         }
         else if( vehicleType.equalsIgnoreCase("Sports") ){
@@ -31,11 +32,11 @@ public class vehicleShowroom {
         }
     }
     
-    public int searchVehicle(String modelNumber){
+    public int searchVehicle(String modelNumber){ //gives the index of the list where the vehicle is found
         int pos = -1;
         
         for( int i = 0; i < vehicles.size(); i++ ){
-            if( vehicles.get(i).getModelNumber() == modelNumber ){
+            if( vehicles.get(i).getModelNumber().equalsIgnoreCase(modelNumber) ){
                 pos = i;
                 break;
             }
@@ -44,11 +45,15 @@ public class vehicleShowroom {
         return pos;
     }
     
-    public void removeVehicle(String modelNumber){
+    public void removeVehicle(String modelNumber){ //remove a vehicle by its model number
         int pos = searchVehicle(modelNumber);
         
         if( pos != -1 ){
             vehicles.remove(pos);
+            System.out.println("\nVehicle removed\n");
+        }
+        else{
+            System.out.println("\nSorry... the vehicle doesn't exist :(\n");
         }
     }
     

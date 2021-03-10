@@ -78,6 +78,11 @@ public class heavyVehicle implements vehicle{
     public void setWeight(float weight) {
         this.weight = weight;
     }
+    
+    @Override
+    public void insert(){
+        
+    }
 
     @Override
     public void showProperty(){

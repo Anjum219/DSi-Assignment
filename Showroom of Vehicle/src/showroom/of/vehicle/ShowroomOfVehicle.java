@@ -11,13 +11,16 @@ public class ShowroomOfVehicle {
 
     public static void main(String[] args) {
         vehicleShowroom vs = new vehicleShowroom();
-        vs.addVehicles("heavy");
+        /*vs.addVehicles("heavy");
         vs.showVehicles();
         vs.addVehicles("rickshaw");
         vs.showVehicles();
         vs.addVehicles("sports");
+        vs.showVehicles();*/
+        vs.addVehicles("normal");
         vs.showVehicles();
-        
+        vs.removeVehicle("MAR23");
+        vs.showVehicles();
     }
     
 }

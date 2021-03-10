@@ -17,5 +17,6 @@ public interface vehicle {
     public String getTurbo();
     public float getWeight();
     
+    public void insert();
     public void showProperty();
 }
