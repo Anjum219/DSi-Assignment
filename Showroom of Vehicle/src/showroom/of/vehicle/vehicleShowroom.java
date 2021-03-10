@@ -23,16 +23,19 @@ public class vehicleShowroom {
             normalVehicle nv = new normalVehicle();
             nv.insert();
             vehicles.add(nv);
+            System.out.println("Added " + vehicleType + " vehicle " + nv.getModelNumber());
         }
         else if( vehicleType.equalsIgnoreCase("Sports") ){
             sportsVehicle sv = new sportsVehicle();
             sv.insert();
             vehicles.add(sv);
+            System.out.println("Added " + vehicleType + " vehicle " + sv.getModelNumber());
         }
         else if( vehicleType.equalsIgnoreCase("Heavy") ){
             heavyVehicle hv = new heavyVehicle();
             hv.insert();
             vehicles.add(hv);
+            System.out.println("Added " + vehicleType + " vehicle " + hv.getModelNumber());
         }
         else{
             System.out.println("Sorry. We don't add " + vehicleType + " vehicle :(");
@@ -52,7 +55,10 @@ public class vehicleShowroom {
         return pos;
     }
     
-    public void removeVehicle(String modelNumber){ //remove a vehicle by its model number
+    public void removeVehicle(){ //remove a vehicle by its model number
+        System.out.print("Insert Model Number: ");
+        Scanner input = new Scanner(System.in);
+        String modelNumber = input.nextLine();
         int pos = searchVehicle(modelNumber);
         
         if( pos != -1 ){

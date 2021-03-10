@@ -11,6 +11,17 @@ public class sportsVehicle implements vehicle{
     private String turbo;
     private float weight;
 
+    public sportsVehicle() {
+        
+    }
+
+    public sportsVehicle(String modelNumber, float enginePower, float tireSize, String turbo) {
+        this.modelNumber = modelNumber;
+        this.enginePower = enginePower;
+        this.tireSize = tireSize;
+        this.turbo = turbo;
+    }
+
     @Override
     public String getVehicleType() {
         return vehicleType;

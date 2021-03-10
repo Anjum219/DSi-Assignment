@@ -11,6 +11,17 @@ public class heavyVehicle implements vehicle{
     private String turbo;
     private float weight;
 
+    public heavyVehicle() {
+        
+    }
+
+    public heavyVehicle(String modelNumber, float enginePower, float tireSize, float weight) {
+        this.modelNumber = modelNumber;
+        this.enginePower = enginePower;
+        this.tireSize = tireSize;
+        this.weight = weight;
+    }
+
     @Override
     public String getVehicleType() {
         return vehicleType;

@@ -11,6 +11,17 @@ public class normalVehicle implements vehicle{
     private String turbo;
     private float weight;
 
+    public normalVehicle() {
+        
+    }
+
+    public normalVehicle(String modelNumber, String engineType, float enginePower, float tireSize) {
+        this.modelNumber = modelNumber;
+        this.engineType = engineType;
+        this.enginePower = enginePower;
+        this.tireSize = tireSize;
+    }
+
     @Override
     public String getVehicleType() {
         return vehicleType;
