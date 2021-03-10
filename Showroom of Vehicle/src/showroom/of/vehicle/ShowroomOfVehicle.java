@@ -42,6 +42,7 @@ public class ShowroomOfVehicle {
             System.out.print("\tA to add vehicle ");
             System.out.print("\tR to remove vehicle ");
             System.out.print("\tS to see vehicles ");
+            System.out.print("\tV to see expected visitor count ");
             System.out.print("\tE to exit ");
             
             Scanner input = new Scanner(System.in);
@@ -55,6 +56,9 @@ public class ShowroomOfVehicle {
             }
             else if( press.equalsIgnoreCase("S") ){
                 vs.showVehicles();
+            }
+            else if( press.equalsIgnoreCase("V") ){
+                vs.showVisitorCount();
             }
         }
     }

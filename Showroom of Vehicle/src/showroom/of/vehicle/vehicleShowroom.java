@@ -5,6 +5,17 @@ import java.util.Scanner;
 
 public class vehicleShowroom {
     private ArrayList<vehicle> vehicles = new ArrayList<vehicle>();
+    private boolean newSUV;
+    private final int normalVisitorCount = 30;
+    private final int additionalVisitorCount = 20;
+
+    public boolean isNewSUV() {
+        return newSUV;
+    }
+
+    public void setNewSUV(boolean newSUV) {
+        this.newSUV = newSUV;
+    }
 
     public ArrayList<vehicle> getVehicles() {
         return vehicles;
@@ -24,18 +35,21 @@ public class vehicleShowroom {
             nv.insert();
             vehicles.add(nv);
             System.out.println("Added " + vehicleType + " vehicle " + nv.getModelNumber());
+            setNewSUV(false);
         }
         else if( vehicleType.equalsIgnoreCase("Sports") ){
             sportsVehicle sv = new sportsVehicle();
             sv.insert();
             vehicles.add(sv);
             System.out.println("Added " + vehicleType + " vehicle " + sv.getModelNumber());
+            setNewSUV(true);
         }
         else if( vehicleType.equalsIgnoreCase("Heavy") ){
             heavyVehicle hv = new heavyVehicle();
             hv.insert();
             vehicles.add(hv);
             System.out.println("Added " + vehicleType + " vehicle " + hv.getModelNumber());
+            setNewSUV(false);
         }
         else{
             System.out.println("Sorry. We don't add " + vehicleType + " vehicle :(");
@@ -77,5 +91,17 @@ public class vehicleShowroom {
             vehicles.get(i).showProperty();
             System.out.println("");
         }
+    }
+    
+    public void showVisitorCount(){
+        System.out.print("\nCurrent Expected Visitor count: ");
+        int vc = normalVisitorCount;
+        
+        if( isNewSUV() ){
+            vc += additionalVisitorCount;
+        }
+        
+        System.out.println(vc);
+        showVehicles();
     }
 }
