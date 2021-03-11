@@ -1,12 +1,7 @@
 package showroom.of.vehicle;
 
-//import java.io.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
-//import java.lang.*;
-//import java.util.ArrayList;
 
 public class ShowroomOfVehicle {
 
